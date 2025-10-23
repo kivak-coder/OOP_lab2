@@ -1,13 +1,13 @@
 #include "include/five.hpp"
 #include <cstdio>
+#include <iostream>
 
 int main() {
     unsigned char * num;
     int size = 6;
-    Five f = Five("21");
-    Five f2 = Five("3");
-    printf("%s %s \n", f.getString().c_str(), f2.getString().c_str());
-    Five fres = f - f2;
-    printf("%s\n", fres.getString().c_str());
+    Five f1 = Five("21");
+    Five f2 = Five(f1);
+
+    std::cout << &f1 << " " << &f2 << std::endl;
     return 0;
 }

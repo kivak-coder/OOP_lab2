@@ -15,15 +15,15 @@ void Five::removeLeadingZeros() {
     
     size_t newSize = size;
     for (size_t i = size; i > 0; --i) {
-        if (digits[i - 1] != 0) break;
-        newSize = i - 1;
+        if (digits[i - 1] != '0') {
+            break;
+        } else {
+            newSize = i - 1;
+        };
     }
     
     if (newSize == 0) {
-        delete[] digits;
-        digits = new unsigned char[1];
-        digits[0] = 0;
-        size = 1;
+        Five();
 
     } else if (newSize != size) {
         unsigned char* newDigits = new unsigned char[newSize];
@@ -60,10 +60,9 @@ Five::Five() {
     digits[0] = 0;
 }
 
-
 Five::Five(const std::string& string) {
     if (string.empty()) {
-        Five(); // check if constructor calling is right
+        Five();
     }
     
     size = string.length();

@@ -1,7 +1,5 @@
 #include <string>
 
-
-
 class Five {
 private:
     unsigned char* digits; 
